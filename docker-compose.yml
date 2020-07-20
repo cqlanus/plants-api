@@ -1,0 +1,40 @@
+version: "3"
+services:
+  plants-api:
+    build: .
+    depends_on:
+      - plants-db
+    ports:
+      - "9001:9001"
+    restart: always
+    volumes:
+      - .:/app
+    command: npm run dev
+    environment:
+      WAIT_HOSTS: postgres:5432
+      POSTGRES_USER: "clanus"
+      POSTGRES_DB: "plants"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_HOST: "plants-db"
+
+  plants-db:
+    image: postgres:11.2-alpine
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: "clanus"
+      POSTGRES_DB: "plants"
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_HOST: "plants-db"
+
+  # redis:
+  #   image: redis:latest
+  #   ports:
+  #     - "6379:6379"
+  #   restart: always
+
+volumes:
+  postgres-data:

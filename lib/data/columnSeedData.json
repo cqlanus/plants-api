@@ -1,0 +1,558 @@
+[
+    {
+        "display": "Accepted Symbol",
+        "column": "accepted_symbol"
+    },
+    {
+        "display": "Synonym Symbol",
+        "column": "synonym_symbol"
+    },
+    {
+        "display": "Symbol",
+        "column": "symbol"
+    },
+    {
+        "display": "Scientific Name",
+        "column": "scientific_name"
+    },
+    {
+        "display": "Hybrid Genus Indicator",
+        "column": "hybrid_genus_indicator"
+    },
+    {
+        "display": "Hybrid Species Indicator",
+        "column": "hybrid_species_indicator"
+    },
+    {
+        "display": "Species",
+        "column": "species"
+    },
+    {
+        "display": "Subspecies Prefix",
+        "column": "subspecies_prefix"
+    },
+    {
+        "display": "Hybrid Subspecies Indicator",
+        "column": "hybrid_subspecies_indicator"
+    },
+    {
+        "display": "Subspecies",
+        "column": "subspecies"
+    },
+    {
+        "display": "Variety Prefix",
+        "column": "variety_prefix"
+    },
+    {
+        "display": "Hybrid Variety Indicator",
+        "column": "hybrid_variety_indicator"
+    },
+    {
+        "display": "Variety",
+        "column": "variety"
+    },
+    {
+        "display": "Subvariety Prefix",
+        "column": "subvariety_prefix"
+    },
+    {
+        "display": "Subvariety",
+        "column": "subvariety"
+    },
+    {
+        "display": "Forma Prefix",
+        "column": "forma_prefix"
+    },
+    {
+        "display": "Forma",
+        "column": "forma"
+    },
+    {
+        "display": "Genera/Binomial Author",
+        "column": "genera_binomial_author"
+    },
+    {
+        "display": "Trinomial Author",
+        "column": "trinomial_author"
+    },
+    {
+        "display": "Quadranomial Author",
+        "column": "quadranomial_author"
+    },
+    {
+        "display": "Questionable Taxon Indicator",
+        "column": "questionable_taxon_indicator"
+    },
+    {
+        "display": "Parents",
+        "column": "parents"
+    },
+    {
+        "display": "Common Name",
+        "column": "common_name"
+    },
+    {
+        "display": "State and Province",
+        "column": "state_and_province"
+    },
+    {
+        "display": "Category",
+        "column": "category"
+    },
+    {
+        "display": "Genus",
+        "column": "genus"
+    },
+    {
+        "display": "Family",
+        "column": "family"
+    },
+    {
+        "display": "Family Symbol",
+        "column": "family_symbol"
+    },
+    {
+        "display": "Family Common Name",
+        "column": "family_common_name"
+    },
+    {
+        "display": "Order",
+        "column": "order"
+    },
+    {
+        "display": "SubClass",
+        "column": "subclass"
+    },
+    {
+        "display": "Class",
+        "column": "class"
+    },
+    {
+        "display": "SubDivision",
+        "column": "subdivision"
+    },
+    {
+        "display": "Division",
+        "column": "division"
+    },
+    {
+        "display": "SuperDivision",
+        "column": "superdivision"
+    },
+    {
+        "display": "SubKingdom",
+        "column": "subkingdom"
+    },
+    {
+        "display": "Kingdom",
+        "column": "kingdom"
+    },
+    {
+        "display": "ITIS TSN",
+        "column": "itis_tsn"
+    },
+    {
+        "display": "Duration",
+        "column": "duration"
+    },
+    {
+        "display": "Growth Habit",
+        "column": "growth_habit"
+    },
+    {
+        "display": "Native Status",
+        "column": "native_status"
+    },
+    {
+        "display": "Federal Noxious Status",
+        "column": "federal_noxious_status"
+    },
+    {
+        "display": "Federal Noxious Common Name",
+        "column": "federal_noxious_common_name"
+    },
+    {
+        "display": "State Noxious Status",
+        "column": "state_noxious_status"
+    },
+    {
+        "display": "State Noxious Common Name",
+        "column": "state_noxious_common_name"
+    },
+    {
+        "display": "Invasive",
+        "column": "invasive"
+    },
+    {
+        "display": "Federal T/E Status",
+        "column": "federal_t_e_status"
+    },
+    {
+        "display": "State T/E Status",
+        "column": "state_t_e_status"
+    },
+    {
+        "display": "State T/E Common Name",
+        "column": "state_t_e_common_name"
+    },
+    {
+        "display": "National Wetland Indicator Status",
+        "column": "national_wetland_indicator_status"
+    },
+    {
+        "display": "Regional Wetland Indicator Status",
+        "column": "regional_wetland_indicator_status"
+    },
+    {
+        "display": "Image Gallery",
+        "column": "image_gallery"
+    },
+    {
+        "display": "Fact Sheets",
+        "column": "fact_sheets"
+    },
+    {
+        "display": "Plant Guides",
+        "column": "plant_guides"
+    },
+    {
+        "display": "Characteristics Data",
+        "column": "characteristics_data"
+    },
+    {
+        "display": "Cultivar Name",
+        "column": "cultivar_name"
+    },
+    {
+        "display": "Active Growth Period",
+        "column": "active_growth_period"
+    },
+    {
+        "display": "After Harvest Regrowth Rate",
+        "column": "after_harvest_regrowth_rate"
+    },
+    {
+        "display": "Bloat",
+        "column": "bloat"
+    },
+    {
+        "display": "C:N Ratio",
+        "column": "c_n_ratio"
+    },
+    {
+        "display": "Coppice Potential",
+        "column": "coppice_potential"
+    },
+    {
+        "display": "Fall Conspicuous",
+        "column": "fall_conspicuous"
+    },
+    {
+        "display": "Fire Resistance",
+        "column": "fire_resistance"
+    },
+    {
+        "display": "Flower Color",
+        "column": "flower_color"
+    },
+    {
+        "display": "Flower Conspicuous",
+        "column": "flower_conspicuous"
+    },
+    {
+        "display": "Foliage Color",
+        "column": "foliage_color"
+    },
+    {
+        "display": "Foliage Porosity Summer",
+        "column": "foliage_porosity_summer"
+    },
+    {
+        "display": "Foliage Porosity Winter",
+        "column": "foliage_porosity_winter"
+    },
+    {
+        "display": "Foliage Texture",
+        "column": "foliage_texture"
+    },
+    {
+        "display": "Fruit Color",
+        "column": "fruit_color"
+    },
+    {
+        "display": "Fruit Conspicuous",
+        "column": "fruit_conspicuous"
+    },
+    {
+        "display": "Growth Form",
+        "column": "growth_form"
+    },
+    {
+        "display": "Growth Rate",
+        "column": "growth_rate"
+    },
+    {
+        "display": "Height at Base Age, Maximum (feet)",
+        "column": "height_at_base_age_maximum_feet"
+    },
+    {
+        "display": "Height, Mature (feet)",
+        "column": "height_mature_feet"
+    },
+    {
+        "display": "Known Allelopath",
+        "column": "known_allelopath"
+    },
+    {
+        "display": "Leaf Retention",
+        "column": "leaf_retention"
+    },
+    {
+        "display": "Lifespan",
+        "column": "lifespan"
+    },
+    {
+        "display": "Low Growing Grass",
+        "column": "low_growing_grass"
+    },
+    {
+        "display": "Nitrogen Fixation",
+        "column": "nitrogen_fixation"
+    },
+    {
+        "display": "Resprout Ability",
+        "column": "resprout_ability"
+    },
+    {
+        "display": "Shape and Orientation",
+        "column": "shape_and_orientation"
+    },
+    {
+        "display": "Toxicity",
+        "column": "toxicity"
+    },
+    {
+        "display": "Adapted to Coarse Textured Soils",
+        "column": "adapted_to_coarse_textured_soils"
+    },
+    {
+        "display": "Adapted to Medium Textured Soils",
+        "column": "adapted_to_medium_textured_soils"
+    },
+    {
+        "display": "Adapted to Fine Textured Soils",
+        "column": "adapted_to_fine_textured_soils"
+    },
+    {
+        "display": "Anaerobic Tolerance",
+        "column": "anaerobic_tolerance"
+    },
+    {
+        "display": "CaCO<SUB>3</SUB> Tolerance",
+        "column": "caco_3_tolerance"
+    },
+    {
+        "display": "Cold Stratification Required",
+        "column": "cold_stratification_required"
+    },
+    {
+        "display": "Drought Tolerance",
+        "column": "drought_tolerance"
+    },
+    {
+        "display": "Fertility Requirement",
+        "column": "fertility_requirement"
+    },
+    {
+        "display": "Fire Tolerance",
+        "column": "fire_tolerance"
+    },
+    {
+        "display": "Frost Free Days, Minimum",
+        "column": "frost_free_days_minimum"
+    },
+    {
+        "display": "Hedge Tolerance",
+        "column": "hedge_tolerance"
+    },
+    {
+        "display": "Moisture Use",
+        "column": "moisture_use"
+    },
+    {
+        "display": "pH (Minimum)",
+        "column": "ph_minimum"
+    },
+    {
+        "display": "pH (Maximum)",
+        "column": "ph_maximum"
+    },
+    {
+        "display": "Planting Density per Acre, Minimum",
+        "column": "planting_density_per_acre_minimum"
+    },
+    {
+        "display": "Planting Density per Acre, Maximum",
+        "column": "planting_density_per_acre_maximum"
+    },
+    {
+        "display": "Precipitation (Minimum)",
+        "column": "precipitation_minimum"
+    },
+    {
+        "display": "Precipitation (Maximum)",
+        "column": "precipitation_maximum"
+    },
+    {
+        "display": "Root Depth, Minimum (inches)",
+        "column": "root_depth_minimum_inches"
+    },
+    {
+        "display": "Salinity Tolerance",
+        "column": "salinity_tolerance"
+    },
+    {
+        "display": "Shade Tolerance",
+        "column": "shade_tolerance"
+    },
+    {
+        "display": "Temperature, Minimum (°F)",
+        "column": "temperature_minimum_f"
+    },
+    {
+        "display": "Bloom Period",
+        "column": "bloom_period"
+    },
+    {
+        "display": "Commercial Availability",
+        "column": "commercial_availability"
+    },
+    {
+        "display": "Fruit/Seed Abundance",
+        "column": "fruit_seed_abundance"
+    },
+    {
+        "display": "Fruit/Seed Period Begin",
+        "column": "fruit_seed_period_begin"
+    },
+    {
+        "display": "Fruit/Seed Period End",
+        "column": "fruit_seed_period_end"
+    },
+    {
+        "display": "Fruit/Seed Persistence",
+        "column": "fruit_seed_persistence"
+    },
+    {
+        "display": "Propogated by Bare Root",
+        "column": "propogated_by_bare_root"
+    },
+    {
+        "display": "Propogated by Bulbs",
+        "column": "propogated_by_bulbs"
+    },
+    {
+        "display": "Propogated by Container",
+        "column": "propogated_by_container"
+    },
+    {
+        "display": "Propogated by Corms",
+        "column": "propogated_by_corms"
+    },
+    {
+        "display": "Propogated by Cuttings",
+        "column": "propogated_by_cuttings"
+    },
+    {
+        "display": "Propogated by Seed",
+        "column": "propogated_by_seed"
+    },
+    {
+        "display": "Propogated by Sod",
+        "column": "propogated_by_sod"
+    },
+    {
+        "display": "Propogated by Sprigs",
+        "column": "propogated_by_sprigs"
+    },
+    {
+        "display": "Propogated by Tubers",
+        "column": "propogated_by_tubers"
+    },
+    {
+        "display": "Seeds per Pound",
+        "column": "seeds_per_pound"
+    },
+    {
+        "display": "Seed Spread Rate",
+        "column": "seed_spread_rate"
+    },
+    {
+        "display": "Seedling Vigor",
+        "column": "seedling_vigor"
+    },
+    {
+        "display": "Small Grain",
+        "column": "small_grain"
+    },
+    {
+        "display": "Vegetative Spread Rate",
+        "column": "vegetative_spread_rate"
+    },
+    {
+        "display": "Berry/Nut/Seed Product",
+        "column": "berry_nut_seed_product"
+    },
+    {
+        "display": "Christmas Tree Product",
+        "column": "christmas_tree_product"
+    },
+    {
+        "display": "Fodder Product",
+        "column": "fodder_product"
+    },
+    {
+        "display": "Fuelwood Product",
+        "column": "fuelwood_product"
+    },
+    {
+        "display": "Lumber Product",
+        "column": "lumber_product"
+    },
+    {
+        "display": "Naval Store Product",
+        "column": "naval_store_product"
+    },
+    {
+        "display": "Nursery Stock Product",
+        "column": "nursery_stock_product"
+    },
+    {
+        "display": "Palatable Browse Animal",
+        "column": "palatable_browse_animal"
+    },
+    {
+        "display": "Palatable Graze Animal",
+        "column": "palatable_graze_animal"
+    },
+    {
+        "display": "Palatable Human",
+        "column": "palatable_human"
+    },
+    {
+        "display": "Post Product",
+        "column": "post_product"
+    },
+    {
+        "display": "Protein Potential",
+        "column": "protein_potential"
+    },
+    {
+        "display": "Pulpwood Product",
+        "column": "pulpwood_product"
+    },
+    {
+        "display": "Veneer Product",
+        "column": "veneer_product"
+    }
+]

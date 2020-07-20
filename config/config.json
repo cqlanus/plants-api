@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "clanus",
+    "password": "password",
+    "database": "plants",
+    "host": "plants-db",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "clanus",
+    "password": "password",
+    "database": "plants",
+    "host": "plants-db",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "clanus",
+    "password": "password",
+    "database": "plants",
+    "host": "plants-db",
+    "dialect": "postgres"
+  }
+}
