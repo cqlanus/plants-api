@@ -9,9 +9,9 @@ services:
     restart: always
     volumes:
       - .:/app
-    command: npm run dev
+    command: sh scripts/bootstrap.sh
     environment:
-      WAIT_HOSTS: postgres:5432
+      WAIT_HOSTS: plants-db:5432
       POSTGRES_USER: "clanus"
       POSTGRES_DB: "plants"
       POSTGRES_PASSWORD: "password"

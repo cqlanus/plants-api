@@ -1,6 +1,6 @@
 // const http = require('http')
-const fs = require('fs')
-const https = require('https')
+// const fs = require('fs')
+// const https = require('https')
 const http = require('http')
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -15,11 +15,15 @@ const logger = require('./lib/logger')
 const errorHandler = require('./lib/errorHandler')
 const corsMiddleware = require('./lib/cors')
 
+const plantRouter = require('./routes/plant')
+
 // Global middlewares
 app.use(logger)
 app.use(compress())
 app.use(bodyParser.json())
 app.use(corsMiddleware)
+
+app.use('/plant', plantRouter)
 
 app.use('*', () => {
   throw new Error('wrong')
