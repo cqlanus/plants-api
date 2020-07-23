@@ -23,9 +23,13 @@
     "fast-csv": "^4.3.1",
     "morgan": "^1.10.0",
     "node-fetch": "^2.6.0",
+    "pdf2json": "^1.2.0",
     "pg": "^8.3.0",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.3.3"
+    "python": "0.0.4",
+    "python-shell": "^2.0.1",
+    "sequelize": "^6.3.3",
+    "shell": "^0.5.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",

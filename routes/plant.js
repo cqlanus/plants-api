@@ -14,4 +14,16 @@ router.get('/', async (req, res) => {
     }
 })
 
+router.get('/:id/guide', async (req, res) => {
+    try {
+        const { id } = req.params
+        const guide = await plant.getPlantGuide(id)
+        res.json(guide)
+    } catch (err) {
+        console.log({ err })
+        const { message } = err
+        res.status(500).json({ message })
+    } 
+})
+
 module.exports = router

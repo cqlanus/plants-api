@@ -8,10 +8,14 @@ ENV PORT 9001
 
 COPY package.json ./
 COPY package-lock.json ./
+RUN apt-get update
+RUN apt-get install python3 -y
+RUN apt-get install python3-pip -y
 RUN npm install --silent
 
 # add app
 COPY . ./
+RUN pip3 install -r requirements.txt
 
 ## THE LIFE SAVER
 ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
