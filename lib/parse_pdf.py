@@ -8,10 +8,8 @@ def main():
     """
     # url = 'https://plants.sc.egov.usda.gov/plantguide/pdf/cs_baau.pdf'
     url = sys.argv[1]
-    print(url)
     filepath = './lib/data/sample.pdf'
     resp = requests.get(url, stream=True)
-    # print(resp.content)
     with open(filepath, 'wb') as f:
         f.write(resp.content)
     text = extract_text(filepath)

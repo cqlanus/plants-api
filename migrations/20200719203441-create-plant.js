@@ -94,6 +94,7 @@ module.exports = {
                   "cultivar_name": Sequelize.STRING(1234),
                   "characteristics_data": Sequelize.STRING(1234),
                   "plant_guides": Sequelize.STRING(1234),
+                  "plant_guides_text": Sequelize.JSONB,
                   "fact_sheets": Sequelize.STRING(1234),
                   "image_gallery": Sequelize.STRING(1234),
                   "regional_wetland_indicator_status": Sequelize.STRING(1234),

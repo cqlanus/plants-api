@@ -106,6 +106,7 @@ module.exports = (sequelize, DataTypes) => {
                 "cultivar_name": DataTypes.STRING(1234),
                 "characteristics_data": DataTypes.STRING(1234),
                 "plant_guides": DataTypes.STRING(1234),
+                "plant_guides_text": DataTypes.JSONB,
                 "fact_sheets": DataTypes.STRING(1234),
                 "image_gallery": DataTypes.STRING(1234),
                 "regional_wetland_indicator_status": DataTypes.STRING(1234),
