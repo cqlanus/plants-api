@@ -2,3 +2,4 @@ node_modules
 plants.csv
 .env
 *.pdf
+report*.json

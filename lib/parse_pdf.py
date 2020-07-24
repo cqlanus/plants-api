@@ -1,22 +1,33 @@
 """testing"""
 import sys
 import requests
-from pdfminer.high_level import extract_text
+from pdfminer.high_level import extract_text, extract_pages
+from pdfminer.layout import LTTextContainer, LAParams
+
+FILE_PATH = './lib/data/sample.pdf'
+def writeText():
+    url = sys.argv[1]
+    resp = requests.get(url, stream=True)
+    with open(FILE_PATH, 'wb') as f:
+        f.write(resp.content)
 
 def main():
     """testing
     """
-    # url = 'https://plants.sc.egov.usda.gov/plantguide/pdf/cs_baau.pdf'
-    url = sys.argv[1]
-    filepath = './lib/data/sample.pdf'
-    resp = requests.get(url, stream=True)
-    with open(filepath, 'wb') as f:
-        f.write(resp.content)
-    text = extract_text(filepath)
+    writeText()
+    text = extract_text(FILE_PATH)
     return text.encode('utf8')
 
-PDF_TEXT = main()
-print(PDF_TEXT)
+def layout():
+    writeText()
+    la_params = LAParams(boxes_flow=-0.5)
+    pages = extract_pages(FILE_PATH, laparams=la_params)
+    for page_layout in pages:
+        for element in page_layout:
+            if isinstance(element, LTTextContainer):
+                print(element.get_text().encode('utf8'))
+layout()
+# print(PDF_TEXT)
 sys.stdout.flush()
 sys.exit(0)
 

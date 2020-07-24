@@ -4,9 +4,27 @@ const router = express.Router()
 
 router.get('/', async (req, res) => {
     try {
-        const { query } = req
-        const resp = await plant.get(query)
+        let { query } = req
+        const { complex, q } = query
+        let resp;
+        if (complex) {
+            resp = await plant.complexGetAll(JSON.parse(q))
+        } else {
+            resp = await plant.getAll(query)
+        }
         res.json(resp)
+    } catch (err) {
+        console.log({ err })
+        const { message } = err
+        res.status(500).json({ message })
+    }
+})
+
+router.get('/:id', async (req, res) => {
+    try {
+        const { id } = req.params
+        const plant = await plant.get(id)
+        res.json(plant)
     } catch (err) {
         console.log({ err })
         const { message } = err
@@ -23,7 +41,7 @@ router.get('/:id/guide', async (req, res) => {
         console.log({ err })
         const { message } = err
         res.status(500).json({ message })
-    } 
+    }
 })
 
 module.exports = router

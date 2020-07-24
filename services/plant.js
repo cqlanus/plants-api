@@ -1,6 +1,7 @@
 const { PythonShell } = require('python-shell')
+const { Op } = require('sequelize')
 const { Plant } = require('../models')
-const parsePdf = require('../lib/parsePdf')
+const { parsePdf } = require('../lib/parsePdf')
 
 const getPythonData = (path, options) => {
     return new Promise((resolve, reject) => {
@@ -11,9 +12,37 @@ const getPythonData = (path, options) => {
     })
 }
 
+const parseComplexQuery = (query) => {
+    return Object.entries(query).reduce((final, [k, { op, value }]) => {
+        const existingOp = Op[op]
+        console.log({ existingOp, Op, op })
+        if (existingOp) {
+            return {
+                ...final,
+                [k]: { [existingOp]: value }
+            }
+        }
+        return final
+    }, {})
+}
+
 class PlantService {
     BASE = 'https://plants.sc.egov.usda.gov'
-    get = async (query) => {
+
+    get = async (id) => {
+        const plant = await Plant.findOne({ where: { id } })
+        return plant
+    }
+
+    getAll = async (query) => {
+        const plants = await Plant.findAll({ where: query })
+        return plants
+    }
+
+    complexGetAll = async (complexQuery) => {
+        console.log({ complexQuery })
+        const query = parseComplexQuery(complexQuery)
+        console.log({ query })
         const plants = await Plant.findAll({ where: query })
         return plants
     }
@@ -34,9 +63,7 @@ class PlantService {
             const guideText = await parsePdf(text)
             await Plant.update({
                 plant_guides_text: guideText
-            }, {
-                    where: { id },
-                })
+            }, { where: { id }, })
             return guideText
         }
     }
