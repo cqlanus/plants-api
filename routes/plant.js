@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.get('/', async (req, res) => {
     try {
-        let { query } = req
+        let { query = {} } = req
         const { complex, q } = query
         let resp;
         if (complex) {

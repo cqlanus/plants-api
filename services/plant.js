@@ -26,6 +26,27 @@ const parseComplexQuery = (query) => {
     }, {})
 }
 
+const formatQuery = query => {
+    const doFirstCap = val => `${val.slice(0, 1).toUpperCase()}${val.slice(1).toLowerCase()}`
+    const identity = val => val
+    const allLower = val => val.toLowerCase()
+    const allUpper = val => val.toUpperCase()
+    const config = {
+        genus: doFirstCap,
+        species: allLower,
+        symbol: allUpper,
+        common_name: allLower,
+    }
+    return Object.entries(query).reduce((finalQ, [ key, value ]) => {
+        const formatter = config[key] || identity
+        const formatted = formatter(value)
+        return {
+            ...finalQ,
+            [key]: formatted
+        }
+    }, query)
+}
+
 class PlantService {
     BASE = 'https://plants.sc.egov.usda.gov'
 
@@ -35,7 +56,7 @@ class PlantService {
     }
 
     getAll = async (query) => {
-        const plants = await Plant.findAll({ where: query })
+        const plants = await Plant.findAll({ where: formatQuery(query) })
         return plants
     }
 
@@ -59,8 +80,9 @@ class PlantService {
                 args: [url]
             }
 
-            const [text] = await getPythonData('./lib/parse_pdf.py', options)
-            const guideText = await parsePdf(text)
+            const things = await getPythonData('./lib/parse_pdf.py', options)
+            console.log({ things })
+            const guideText = await parsePdf(things)
             await Plant.update({
                 plant_guides_text: guideText
             }, { where: { id }, })
