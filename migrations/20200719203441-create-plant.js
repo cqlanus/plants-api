@@ -95,6 +95,7 @@ module.exports = {
                   "characteristics_data": Sequelize.STRING(1234),
                   "plant_guides": Sequelize.STRING(1234),
                   "plant_guides_text": Sequelize.JSONB,
+                  "image_urls": Sequelize.ARRAY(Sequelize.STRING),
                   "fact_sheets": Sequelize.STRING(1234),
                   "image_gallery": Sequelize.STRING(1234),
                   "regional_wetland_indicator_status": Sequelize.STRING(1234),
@@ -158,7 +159,7 @@ module.exports = {
                   }
             });
       },
-      down: async (queryInterface, Sequelize) => {
+      down: async (queryInterface) => {
             await queryInterface.dropTable('Plants');
       }
 };

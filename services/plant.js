@@ -2,6 +2,7 @@ const { PythonShell } = require('python-shell')
 const { Op } = require('sequelize')
 const { Plant } = require('../models')
 const { parsePdf } = require('../lib/parsePdf')
+const scrapeImageUrls = require('../lib/scrapeImageUrls')
 
 const getPythonData = (path, options) => {
     return new Promise((resolve, reject) => {
@@ -37,7 +38,7 @@ const formatQuery = query => {
         symbol: allUpper,
         common_name: allLower,
     }
-    return Object.entries(query).reduce((finalQ, [ key, value ]) => {
+    return Object.entries(query).reduce((finalQ, [key, value]) => {
         const formatter = config[key] || identity
         const formatted = formatter(value)
         return {
@@ -55,17 +56,36 @@ class PlantService {
         return plant
     }
 
-    getAll = async (query) => {
-        const plants = await Plant.findAll({ where: formatQuery(query) })
+    getAll = async (query, page = 1) => {
+        const limit = 20
+        const offset = (page - 1) * limit
+        const plants = await Plant.findAndCountAll({
+            where: formatQuery(query),
+            limit,
+            offset
+        })
         return plants
     }
 
-    complexGetAll = async (complexQuery) => {
-        console.log({ complexQuery })
+    complexGetAll = async (complexQuery, page) => {
+        const limit = 20
+        const offset = (page - 1) * limit
         const query = parseComplexQuery(complexQuery)
-        console.log({ query })
-        const plants = await Plant.findAll({ where: query })
+        const plants = await Plant.findAndCountAll({ where: query, limit, offset })
         return plants
+    }
+
+    getPlantImages = async (id) => {
+        const plant = await Plant.findOne({ where: { id } })
+        const { image_urls } = plant || {}
+        if (image_urls) {
+            return image_urls
+        }
+        const scrapedImageUrls = await scrapeImageUrls(plant.symbol)
+        await Plant.update({
+            image_urls: scrapedImageUrls
+        }, { where: { id } })
+        return scrapedImageUrls
     }
 
     getPlantGuide = async (id) => {
