@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
                  * This method is not a part of DataTypes lifecycle.
                  * The `models/index` file will call this method automatically.
                  */
-                static associate(models) {
+                static associate() {
                         // define association here
                 }
         }
@@ -107,6 +107,7 @@ module.exports = (sequelize, DataTypes) => {
                 "characteristics_data": DataTypes.STRING(1234),
                 "plant_guides": DataTypes.STRING(1234),
                 "plant_guides_text": DataTypes.JSONB,
+                "image_urls": DataTypes.ARRAY(DataTypes.STRING),
                 "fact_sheets": DataTypes.STRING(1234),
                 "image_gallery": DataTypes.STRING(1234),
                 "regional_wetland_indicator_status": DataTypes.STRING(1234),
