@@ -16,6 +16,7 @@ const errorHandler = require('./lib/errorHandler')
 const corsMiddleware = require('./lib/cors')
 
 const plantRouter = require('./routes/plant')
+const categoriesRouter = require('./routes/category')
 
 // Global middlewares
 app.use(logger)
@@ -24,6 +25,7 @@ app.use(bodyParser.json())
 app.use(corsMiddleware)
 
 app.use('/plant', plantRouter)
+app.use('/category', categoriesRouter)
 
 app.use('*', () => {
   throw new Error('wrong')
