@@ -8,6 +8,8 @@
     "dev": "npx nodemon index.js",
     "db:create": "npx sequelize-cli db:migrate",
     "db:seed": "npx sequelize-cli db:seed:all",
+    "db:create:prod": "NODE_ENV=production npx sequelize-cli db:migrate",
+    "db:seed:prod": "NODE_ENV=production npx sequelize-cli db:seed:all",
     "up": "docker-compose up",
     "down": "docker-compose down"
   },

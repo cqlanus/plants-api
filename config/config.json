@@ -17,7 +17,7 @@
     "username": "clanus",
     "password": "password",
     "database": "plants",
-    "host": "plants-db",
+    "host": "plants.chimlwu7ixbj.us-east-2.rds.amazonaws.com",
     "dialect": "postgres"
   }
 }
