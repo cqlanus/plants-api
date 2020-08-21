@@ -8,9 +8,9 @@ ENV PORT 9001
 
 COPY package.json ./
 COPY package-lock.json ./
-RUN apt-get update
-RUN apt-get install python3 -y
-RUN apt-get install python3-pip -y
+RUN apt-get update && apt-get install -y \
+  python3 \
+  python3-pip
 RUN npm install --silent
 
 # add app
@@ -26,4 +26,4 @@ EXPOSE 9001
 
 ## Launch the wait tool and then your application
 # CMD /wait && npm run boot
-CMD npm run boot
+CMD ["npm", "run", "boot"]
