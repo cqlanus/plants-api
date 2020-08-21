@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+##!/bin/sh
 
 # npm run db:create
 # npm run db:seed
