@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npx nodemon index.js",
+    "boot": "sh scripts/bootstrap.sh",
     "db:create": "npx sequelize-cli db:migrate",
     "db:seed": "npx sequelize-cli db:seed:all",
     "db:create:prod": "NODE_ENV=production npx sequelize-cli db:migrate",
