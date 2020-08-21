@@ -11,7 +11,7 @@
   "containerDefinitions": [
     {
       "name": "plants-api",
-      "image": "cqlanus/plants-api:latest",
+      "image": "cqlanus/plants:latest",
       "memory": 128,
       "essential": true,
       "portMappings": [
