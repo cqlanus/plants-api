@@ -14,6 +14,7 @@
       "image": "cqlanus/plants:latest",
       "memory": 128,
       "essential": true,
+      "entrypoint": ["npm", "run", "dev"],
       "portMappings": [
         {
           "hostPort": 80,
