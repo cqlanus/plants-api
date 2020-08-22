@@ -5,12 +5,16 @@ phases:
     commands:
       - echo Logging in to Docker Hub...
       - docker login --username=$USERNAME  --password=$PASSWORD
-      - docker buildx create --name mybuilder
-      - docker buildx use mybuilder
-      - docker buildx inspect --bootstrap
+      - echo downloading buildx
+      - git clone git://github.com/docker/buildx && cd buildx
+      - make install
   build:
     commands:
       - echo Build started on `date`
+      - echo Creating builder
+      - docker buildx create --name mybuilder
+      - docker buildx use mybuilder
+      - docker buildx inspect --bootstrap
       - echo Building the Docker image...
       - docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $IMAGE_REPO_NAME:$IMAGE_TAG --push .
   post_build:
