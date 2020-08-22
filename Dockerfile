@@ -26,4 +26,4 @@ EXPOSE 9001
 
 ## Launch the wait tool and then your application
 # CMD /wait && npm run boot
-CMD npm run dev
+ENTRYPOINT npm run dev
