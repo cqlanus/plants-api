@@ -20,7 +20,7 @@ RUN pip3 install -r requirements.txt
 ## THE LIFE SAVER
 # ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.2.1/wait /wait
 # RUN chmod +x /wait
-RUN chmod +x /app/scripts/bootstrap.sh
+# RUN chmod +x /app/scripts/bootstrap.sh
 
 EXPOSE 9001
 
