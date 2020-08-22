@@ -1,4 +1,4 @@
-FROM node:12-buster
+FROM node:latest
 MAINTAINER Chris Lanus <cqlanus@gmail.com>
 
 # set working directory
@@ -10,8 +10,7 @@ COPY package.json ./
 COPY package-lock.json ./
 RUN apt-get update && apt-get install -y \
   python3 \
-  python3-pip \
-  npm
+  python3-pip
 RUN npm install --silent
 
 # add app
