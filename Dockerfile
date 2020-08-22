@@ -1,4 +1,4 @@
-FROM node:12
+FROM node:12-buster
 MAINTAINER Chris Lanus <cqlanus@gmail.com>
 
 # set working directory
