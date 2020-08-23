@@ -14,7 +14,7 @@
       "image": "cqlanus/plants:latest",
       "memory": 128,
       "essential": true,
-      "entryPoint": ["sh", "scripts/bootstrap.sh"],
+      "entryPoint": ["/bin/sh", "scripts/bootstrap.sh"],
       "portMappings": [
         {
           "hostPort": 80,
