@@ -5,38 +5,20 @@ phases:
     commands:
       - echo Logging in to Docker Hub...
       - docker login --username=$USERNAME  --password=$PASSWORD
+      - echo downloading buildx
+      - git clone git://github.com/docker/buildx && cd buildx
+      - make install
   build:
     commands:
       - echo Build started on `date`
+      - echo Creating builder
+      - docker buildx create --name mybuilder
+      - docker buildx use mybuilder
+      - docker buildx inspect --bootstrap
       - echo Building the Docker image...
-      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
-      - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $IMAGE_REPO_NAME:$IMAGE_TAG
+      - docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t $IMAGE_REPO_NAME:$IMAGE_TAG .
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push $IMAGE_REPO_NAME:$IMAGE_TAG
-
-# version: 0.2
-
-# phases:
-#   pre_build:
-#     commands:
-#       - echo Logging in to Docker Hub...
-#       - docker login --username=$USERNAME  --password=$PASSWORD
-#       - echo downloading buildx
-#       - git clone git://github.com/docker/buildx && cd buildx
-#       - make install
-#   build:
-#     commands:
-#       - echo Build started on `date`
-#       - echo Creating builder
-#       - docker buildx create --name mybuilder
-#       - docker buildx use mybuilder
-#       - docker buildx inspect --bootstrap
-#       - echo Building the Docker image...
-#       - docker buildx build -t $IMAGE_REPO_NAME:$IMAGE_TAG --push .
-#   post_build:
-#     commands:
-#       - echo Build completed on `date`
-#       - echo Pushing the Docker image...
