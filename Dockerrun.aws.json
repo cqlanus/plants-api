@@ -5,27 +5,5 @@
         "HostPort": 80,
         "ContainerPort": 9001
     },
-    "Command": "sh scripts/bootstrap.sh",
-    "Environment": [
-        {
-          "Name": "NODE_ENV",
-          "Value": "production"
-        },
-        {
-          "Name": "POSTGRES_HOST",
-          "Value": "plants.chimlwu7ixbj.us-east-2.rds.amazonaws.com"
-        },
-        {
-          "Name": "POSTGRES_DB",
-          "Value": "plants"
-        },
-        {
-          "Name": "POSTGRES_USER",
-          "Value": "clanus"
-        },
-        {
-          "Name": "POSTGRES_PASSWORD",
-          "Value": "password"
-        }
-    ]
+    "Command": "sh scripts/bootstrap.sh"
 }
