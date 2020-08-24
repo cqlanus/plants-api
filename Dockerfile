@@ -19,4 +19,11 @@ RUN pip3 install -r requirements.txt
 
 EXPOSE 9001
 
+ENV POSTGRES_USER=clanus
+ENV POSTGRES_PASSWORD=password
+ENV POSTGRES_DB=plants
+ENV POSTGRES_HOST=plants.chimlwu7ixbj.us-east-2.rds.amazonaws.com
+ENV NODE_ENV=production
+
+
 CMD ["sh", "scripts/bootstrap.sh"]
