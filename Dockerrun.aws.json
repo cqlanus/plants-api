@@ -1,5 +1,5 @@
 {
-    "AWSEBDockerrunVersion": 1,
+    "AWSEBDockerrunVersion": "1",
     "Image": "cqlanus/plants:latest",
     "Ports": {
         "HostPort": 80,
