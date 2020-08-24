@@ -1,48 +1,31 @@
 {
-  "AWSEBDockerrunVersion": 2,
-  "volumes": [
-    {
-      "name": "postgres-data",
-      "host": {
-        "sourcePath": "/var/lib/postgresql/data"
-      }
-    }
-  ],
-  "containerDefinitions": [
-    {
-      "name": "plants-api",
-      "image": "cqlanus/plants:latest",
-      "memory": 128,
-      "essential": true,
-      "command": ["sh", "scripts/bootstrap.sh"],
-      "portMappings": [
+    "AWSEBDockerrunVersion": 1,
+    "Image": "cqlanus/plants:latest",
+    "Ports": {
+        "HostPort": 80,
+        "ContainerPort": 9001
+    },
+    "Command": "sh scripts/bootstrap.sh",
+    "Environment": [
         {
-          "hostPort": 80,
-          "containerPort": 9001
+          "Name": "NODE_ENV",
+          "Value": "production"
+        },
+        {
+          "Name": "POSTGRES_HOST",
+          "Value": "plants.chimlwu7ixbj.us-east-2.rds.amazonaws.com"
+        },
+        {
+          "Name": "POSTGRES_DB",
+          "Value": "plants"
+        },
+        {
+          "Name": "POSTGRES_USER",
+          "Value": "clanus"
+        },
+        {
+          "Name": "POSTGRES_PASSWORD",
+          "Value": "password"
         }
-      ],
-      "environment": [
-        {
-          "name": "NODE_ENV",
-          "value": "production"
-        },
-        {
-          "name": "POSTGRES_HOST",
-          "value": "plants.chimlwu7ixbj.us-east-2.rds.amazonaws.com"
-        },
-        {
-          "name": "POSTGRES_DB",
-          "value": "plants"
-        },
-        {
-          "name": "POSTGRES_USER",
-          "value": "clanus"
-        },
-        {
-          "name": "POSTGRES_PASSWORD",
-          "value": "password"
-        }
-      ]
-    }
-  ]
+    ]
 }
