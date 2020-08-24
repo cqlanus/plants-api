@@ -4,9 +4,11 @@
         "Name": "cqlanus/plants:latest",
         "Update": "true"
     },
-    "Ports": {
-        "HostPort": 80,
-        "ContainerPort": 9001
-    },
+    "Ports": [ 
+        {
+            "HostPort": 80,
+            "ContainerPort": 9001
+        } 
+    ],
     "Command": "sh scripts/bootstrap.sh"
 }
