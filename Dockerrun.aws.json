@@ -1,6 +1,9 @@
 {
     "AWSEBDockerrunVersion": "1",
-    "Image": "cqlanus/plants:latest",
+    "Image": {
+        "Name": "cqlanus/plants:latest",
+        "Update": "true"
+    },
     "Ports": {
         "HostPort": 80,
         "ContainerPort": 9001
