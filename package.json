@@ -25,7 +25,7 @@
     "express": "^4.17.1",
     "fast-csv": "^4.3.1",
     "morgan": "^1.10.0",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "pdf2json": "^1.2.0",
     "pg": "^8.3.0",
     "pg-hstore": "^2.3.3",
